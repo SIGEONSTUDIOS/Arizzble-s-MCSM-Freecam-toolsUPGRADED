@@ -8,9 +8,7 @@ require("SessionProperties.lua")
 require("AspectRatio.lua")
 require("UICamera.lua")
 require("PlayerChoice.lua")
-if ResourceSetEnabled("CrowdPlay") then
-  require("CrowdPlay.lua")
-end
+--removed the require crowdplay because its broken since servers are gone
 require("Menu_DLC.lua")
 require("Menu_ListMenu.lua")
 require("UI_ListButton.lua")
@@ -28,22 +26,17 @@ require("Menu_Upsell.lua")
 require("Menu_AccountLink.lua")
 require("Menu_CharacterSelect.lua")
 
---david cutscnee
+--episode file
 require("Menu_TEST_LoadScene.lua")
 
 
-
-
-if ResourceSetEnabled("CrowdPlay") then
-  require("Menu_CrowdPlayMessaging.lua")
-end
 require("UI_AccountLinkWidget.lua")
 require("SaveLoad.lua")
 require("RichPresence.lua")
 require("ClickText.lua")
 require("MenuUtils.lua")
 require("MenuCloudSync.lua")
-if IsToolBuild() then
+if IsToolBuild() then  -- debug build i think
   require("ProjectMenu.lua")
 end
 local mbCrowdPlayResourcesAvailable = ResourceSetEnabled("CrowdPlay")
@@ -77,7 +70,7 @@ if IsToolBuild() then
   CreateAssets()
 end
 if ResourceExists("DebugLoader.lua") then
-  require("DebugLoader.lua")
+  require("DebugLoader.lua") -- debug menu
   local OnLoadDebugMenu = function()
     DebugMenu_AddButton(2, 1, "Main Menu", "Menu_Main")
   end
@@ -391,7 +384,7 @@ function Menu_Main(bSkipCloudSave)
       statsButton:SetIsLocked(ChoiceStats_IsEmpty())
     end
     Menu_Add(ListButton, "settings", "label_settings", "Menu_Options()")
-    Menu_Add(ListButton, "firstcutscenelevel", "Launch Freecam Mode", "PlayCutscene()")
+    Menu_Add(ListButton, "firstcutscenelevel", "Freecam(broken)", "PlayCutscene()")
     if IsPlatformXboxOne() then
       Menu_Add(ListButton, "help", "label_help", "PlatformOpenHelpUI()")
     end
