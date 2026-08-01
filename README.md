@@ -1,6 +1,6 @@
-# Arizzble-s-MCSM-Freecam-tools
-This mod allow let you to explore MCSM world whatever you want!
+MCSM noclip tools
 
-the mod hasnt been updated for a while so i will update it in a fork.
 
-all credits to @aabi (arrizable)
+in development
+
+inspired by MCSM Freecam tools
